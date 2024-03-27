@@ -1,7 +1,7 @@
 const fs = require("fs");
 const crypto = require("crypto"); // este modulo sirve para encriptar datos, seguridad en la informacion
 
-let rutaArchivo = require("../../../EJERCICIO/src/data/products.json");
+//
 
 class ProductManager {
 

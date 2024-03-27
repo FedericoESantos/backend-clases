@@ -1,15 +1,11 @@
 const express = require("express");
+const ProductManager = require("./dao/ProductManager.js"); // aca importo la clase
 
-// tenes que importar la clase.. y luego crear la instancia...!!!
-const ProductManager = require("./dao/ProductManager.js");
-
-
-const productManager = new ProductManager("./src/data/products.json"); // aca creo la instancia de ProductManager por unica vez de manera global
+const productManager = new ProductManager("./data/products.json"); //creo la instancia de manera global
 
 const PORT = 8080;
 
 const app = express();
-
 
 app.get("/", (req, res) => { // PÁGINA PRINCIPAL
     res.send("Página Principal");
@@ -19,13 +15,11 @@ app.get("/products", async (req, res) => { // PÁGINA DE PRODUCTOS
     // NO SE PUEDE USAR 2 RES como respuesta                            
     let productos = await productManager.leerProducto(); // leo los productos del json en una const
     return res.status(200).json({productos}); // aca traemos al servidor a todos los productos
-
 })
 
-
-app.get("/products/:pid", async (req,res)=>{ // PÁGINA DE PRODUCTOS POR ID -- PRIMERO VA EL REQ Y LUEGO EL RES
+app.get("/products/:pid", async (req,res)=>{ // PÁGINA DE PRODUCTOS POR ID |
+    //PRIMERO VA EL REQ Y LUEGO EL RES
     let productos = await productManager.leerProducto(); //aca te lee los productos
-
     let id = req.params.pid;  // el .pid final se refiere al nombre de la ruta (/:pid)
     // LOGICA DE IGUALAR AL ID A UN NUMERO
     id = Number(id); 
@@ -42,13 +36,28 @@ app.get("/products/:pid", async (req,res)=>{ // PÁGINA DE PRODUCTOS POR ID -- P
         res.status(404).json({message:`no existe producto con id ${id}`})
     }
 
+})
+
+app.get("/products?limit=5", async (req, res) => { 
+    // NO SE PUEDE USAR 2 RES como respuesta                            
+    let productos = await productManager.leerProducto(); // leo los productos del json en una const
+    
     let limit = req.query.limit;
     if(limit && limit>0){
         productos.slice(0,limit);
         return res.json(productos);// aca traemos al servidor a todos los productos
     }
 
+    return res.status(200).json({productos}); // aca traemos al servidor a todos los productos
 })
+
+
+
+
+
+
+
+
 
 app.listen(PORT, ()=>{
     console.log(`Server ONLINE en puerto ${PORT}`);
