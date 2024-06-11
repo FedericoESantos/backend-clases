@@ -1,0 +1,32 @@
+<div class="header">
+    <h1>Página Principal</h1>
+    <img src="/img/mujer-lana2.png" alt="mujer-lana-2">
+</div>
+
+<div class="enlaces">
+    {{>menu}}
+</div>
+
+<h2>Productos Cargados</h2>
+
+<div class="productos-cont">
+
+    {{#each productos}}
+    <div class="card">
+        <div class="figure">
+
+        </div>
+        <div class="info">
+            <ul>
+                <li><strong>Title:</strong> {{title}}</li>
+                <li><strong>Description:</strong> {{description}}</li>
+                <li><strong>Code:</strong> {{code}}</li>
+                <li><strong>Price: </strong>$ {{price}}</li>
+                <li><strong>Stock:</strong> {{stock}}</li>
+                <li><strong>Category:</strong> {{category}}</li>
+            </ul>
+        </div>
+    </div>
+    {{/each}}
+
+</div>

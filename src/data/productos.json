@@ -1,0 +1,105 @@
+    [
+    {   
+        "id": 1,
+        "nombre": "Capitan America",
+        "alias": "Steve Roger",
+        "superpoder": "super fuerza - destreza inhumana",
+        "equipo": "Vengadores",
+        "energia": 1500
+    },
+    {   
+        "id": 2,
+        "nombre": "Ironman",
+        "alias": "Tony Stark",
+        "superpoder": "super inteligencia - genio de la tecnología",
+        "equipo": "Vengadores",
+        "energia": 800
+    },
+    {   
+        "id": 3,
+        "nombre": "Spiderman",
+        "alias": "Peter Parker",
+        "superpoder": "super habilidad - trepa muros",
+        "equipo": "Vengadores",
+        "energia": 1000
+    },
+    {   
+        "id": 4,
+        "nombre": "Thor",
+        "alias": "Thor",
+        "superpoder": "dios del trueno - inmortalidad - super fuerza",
+        "equipo": "Vengadores",
+        "energia": 5000
+    },
+    {   
+        "id": 5,
+        "nombre": "Viuda Negra",
+        "alias": "Natasha Romanoff",
+        "superpoder": "espía - ingenio en la manipulación - habilidades especiales",
+        "equipo": "Vengadores",
+        "energia": 800
+    },
+    {   
+        "id": 6,
+        "nombre": "Wolverine",
+        "alias": "James Logan",
+        "superpoder": "inmortabilidad - cuerpo lleno de adamantium - experto en la lucha",
+        "equipo": "X-Men",
+        "energia": 2000
+    },
+    {   
+        "id": 7,
+        "nombre": "Ciclope",
+        "alias": "Scot Summers",
+        "superpoder": "rayos infrarojos - especialidades especiales para la lucha",
+        "equipo": "X-Men",
+        "energia": 1800
+    },
+    {   
+        "id": 8,
+        "nombre": "Tormenta",
+        "alias": "Ororo Munroe",
+        "superpoder": "manipulación con el clima - especialidad en rayos y tormentas",
+        "equipo": "X-Men",
+        "energia": 1000
+    },
+    {   
+        "id": 9,
+        "nombre": "Profesor X",
+        "alias": "Charles Xavier",
+        "superpoder": "manipulaciones psiquicas - poder de manejar con la mente lo que desee",
+        "equipo": "X-Men",
+        "energia": 6000
+},
+    {   
+        "id": 10,
+        "nombre": "Jean Grey",
+        "alias": "Ave Fénix",
+        "superpoder": "manipulaciones psiquicas - poder de destrucción de atomos",
+        "equipo": "X-Men",
+        "energia": 8000
+    },
+    {   
+        "id": 11,
+        "nombre": "Magneto",
+        "alias": "Erik Lehnsherr",
+        "superpoder": "manipulaciones con los metales - poder de controlar todos los metales",
+        "equipo": "X-Men",
+        "energia": 8000
+    },{   
+        "id": 12,
+        "nombre": "Mystique",
+        "alias": "Raven Darkholme",
+        "superpoder": "habilidad de cambiar de forma - manipulacion de espía y especialidad en la lucha",
+        "equipo": "X-Men",
+        "energia": 3000
+    }
+    ,{   
+        "id": 13,
+        "nombre": "Deadpool",
+        "alias": "Wade Wilson",
+        "superpoder": "Inmortabilidad - habilidad de regeneración - especialista en la lucha con espadas y armas",
+        "equipo": "X-Men - Vengadores - Marvel - proximamente DC",
+        "energia": 10000
+    }
+    ]

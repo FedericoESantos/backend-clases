@@ -1,0 +1,49 @@
+<div class="header">
+<h1> Productos</h1>
+</div>
+
+<div class="enlaces">
+    {{>menu}}
+</div>
+
+
+<input type="text" value="{{carrito._id}}" hidden id="carrito">
+{{!-- con eso creamos un carrito por id |
+si le saco el hidden te muestra por pantalla
+id del carrito creado--}}
+
+<h2>Productos</h2>
+
+<div class="lista-prod">
+    <ul>
+        {{#each productos}}
+        <li>
+            <strong>{{description}}</strong> - Precio: <strong>{{price}}</strong>
+            <button onclick="comprar('{{_id}}')">Agregar al Carrito</button>
+            {{!-- haciendo clic en comprar capturo el _id --}}
+        </li>
+        {{/each}}
+    </ul>
+    <img src="/img/mujer-productos.png" alt="">
+</div>
+
+
+<div id="paginacion">
+    <a href="/productos?pagina=1">Pag. 1</a>
+    {{!-- enlazamos a la misma pagina con un queryParams ? seguido de la pagina que estamos --}}
+    <a href="/usuarios?pagina={{totalPages }}">Ultima Página</a>
+    {{!-- creamos otro enlace con la ultima pagina asi: --}}
+    {{#if hasPrevPage}}
+    <a href="/usuarios?pagina={{prevPage}}">Anterior Página</a>
+    {{/if}}
+    {{!-- creamos otro enlace con la ultima anterior asi pero dentro de un if --}}
+    {{#if hasNextPage}}
+    <a href="/usuarios?pagina={{nextPage}}">Anterior Siguiente</a>
+    {{/if}}
+    {{!-- creamos otro enlace con la ultima siguiente asi pero dentro de un if --}}
+</div>
+
+<br>
+<br>
+
+<script src="/js/productos.js"></script>

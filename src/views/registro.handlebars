@@ -1,0 +1,20 @@
+<div class="header">
+    <h1>Registrate</h1>
+</div>
+
+<div class="enlaces">
+    {{>menu}}
+</div>
+
+
+<br>
+<div class="registro">
+    <img src="/img/registro-mujer.png" alt="">
+    <form action="/api/sessions/registro" method="post">
+        <input type="text" name="nombre" placeholder="nombre">
+        <input type="email" name="email" placeholder="correo electrónico">
+        <input type="password" name="password" placeholder="contraseña">
+        <br><br>
+        <input type="submit" value="Registrar">
+    </form>
+</div>

@@ -1,0 +1,27 @@
+<div class="header">
+    <h1>CHAT</h1>
+</div>
+
+
+<div class="enlaces">
+    {{>menu}}
+</div>
+
+<br>
+
+<input type="text" name="mensaje" id="mensaje"> {{!-- cuando escribamos aca se emitira un mensaje --}}
+<div id="mensajes"></div>
+
+
+<div class="footer-chat">
+
+    <img src="/img/pareja.png" alt="pareja">
+</div>
+
+{{! LA COMUNICACION CON EL BACKEND LA TIENE DESDE EL CHAT Y EL REALTIME PRODUCTS --}}
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{!-- aca insertamos la libreria sweet alert para el chat que son ventanas emergentes => js --}}
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>
+{{!-- este ultimo js va a ser un contenido estatico por lo tanto va a estar dentro de la carpeta public => js --}}
