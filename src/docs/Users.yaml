@@ -1,0 +1,67 @@
+paths:
+  /api/usuarios:
+    get:
+      summary: Lista de Usuarios
+      tags:
+        - Usuarios
+      description: Regresa una lista de usuarios
+      responses:
+        "200":
+          description: Muestra un array de tipo JSON con el nombre de los usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+
+    post:
+      summary: Agrega a la lista de Usuarios
+      tags:
+        - Usuarios
+      description: Agrega usuarios a la lista de usuarios por su ID
+      responses:
+        "200":
+          description: Agrega usuarios por su id
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        "400":
+          description: Error
+
+    put:
+      summary: Actualiza la lista de Usuarios
+      tags:
+        - Usuarios
+      description: Actualiza la lista de usuarios
+      responses:
+        "200":
+          description: Actualiza usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        "400":
+          description: Error
+
+    delete:
+      summary: Borra usuarios de la lista de Usuarios
+      tags:
+        - Usuarios
+      description: Borra usuarios de lista de Usuarios
+      respondes:
+        "200":
+          description: Borra usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string  
+        "400":
+          description: Error

@@ -1,0 +1,47 @@
+<div id="header">
+    <h2>Usuarios</h2>
+    <a href="/"><img src="/img/logo-kataplum.png" alt="" id="logo"></a>
+</div>
+
+<hr>
+{{>menu}}
+<hr>
+<div id="content">
+
+<h3>USUARIOS</h3>
+<br>
+
+    {{#if error}}
+    <div id="error">
+        {{error}}
+    </div>
+    {{/if}}
+
+    <ul id="usuarios">
+        {{#each usuarios}}
+        <li>
+            <strong>Name: </strong> {{name}} ||
+            <strong>Last Name: </strong> {{last_name}} ||
+            <strong>Email: </strong> {{email}} ||
+            <strong>Code: </strong> {{code}}
+        </li>
+        <br>
+        {{/each}}
+    </ul>
+    <hr>
+    <br>
+    <div id="pagina">
+        <a href="/usuarios?pagina=1" id="Cambiarpagina">Pag.1</a>
+        ||
+        {{#if hasPrevPage}}
+        <a href="/usuarios?pagina={{prevPage}}" id="cambiarPagina">Anterior</a>
+        {{/if}}
+        ||
+        {{#if hasNextPage}}
+        <a href="/usuarios?pagina={{nextPage}}" id="cambiarPagina">Siguiente</a>
+        {{/if}}
+        ||
+        <a href="/usuarios?pagina={{totalPages}}" id="cambiarPagina">Ultima Pagina</a>
+    </div>
+</div>
+{{>footer}}

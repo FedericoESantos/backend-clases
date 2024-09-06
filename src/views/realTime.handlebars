@@ -1,0 +1,55 @@
+<div id="header">
+    <h2>Listado de Productos</h2>
+    <a href="/"><img src="/img/logo-kataplum.png" alt="" id="logo"></a>
+</div>
+
+<hr>
+{{>menu}}
+<hr>
+<div id="content">
+
+
+    <div id="productos">
+        {{#each productos}}
+        <div id="card">
+            <img src="{{image}}" style="width:100%; height:auto;">
+            <p><strong>Nombre:</strong> {{name}}</p>
+            <p><strong>Description:</strong> {{description}}</p>
+            <p><strong>Categoria:</strong></p> {{category}}
+            <p><strong>Stock:</strong> {{stock}}</p>
+            <p><strong>Price:</strong></p> {{price}}
+        </div>
+        {{/each}}
+    </div>
+
+    <br>
+
+    <hr>
+    <h3>Carga de Productos</h3>
+    <hr>
+
+    <form action="http://localhost:8000/api/products" method="post" enctype="multipart/form-data" id="stock">
+
+        {{#if error}}
+        <div id="error">
+            {{error}}
+        </div>
+        {{/if}}
+
+
+        <input type="file" name="image">
+        <input type="text" name="name" placeholder="Nombre del Producto">
+        <input type="text" name="description" placeholder="Descripcion del Producto">
+        <input type="text" name="category" placeholder="Categoria del producto">
+        <input type="text" name="stock" placeholder="Stock del Producto">
+        <input type="text" name="price" placeholder="Precio del Producto">
+        <input type="text" name="web" value="web" hidden>
+        <br>
+        <input type="submit" value="Grabar" id="grabar">
+
+    </form>
+</div>
+{{>footer}}
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realTime.js"></script>

@@ -1,0 +1,20 @@
+
+paths:
+  /api/carts:
+    get:
+      summary: Muestra el contenido del carrito
+      tags:
+        - Carrito
+      description: Muestra el contenido de productos dentro del carrito
+      respondes:
+        "200":
+          description: Muestra el Id del carrito
+
+    post:
+      summary: Crea el carrito y agrega productos dentro de él
+      tags:
+        - Carrito
+      description: Crea el carrito por su id y agrega productos dentro
+      respondes:
+        "200":
+          description: Crea el carrito por su Id y agrega productos 

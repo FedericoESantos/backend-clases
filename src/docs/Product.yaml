@@ -1,0 +1,73 @@
+paths:
+  /api/products:
+    get:
+      summary: Regresa lista de Productos
+      tags:
+        - Productos
+      description: Muestra la lista de productos y tambien se muestra a los productos por su ID
+      responses:
+        "200":
+          description: Muestra un array de tipo JSON con el nombre de los productos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    nombre:
+                      type: string
+                      example: "Mascara Dr. Doom"
+        "400":
+          description: Error
+
+    post:
+      summary: Agrega a la lista de Productos
+      tags:
+        - Productos
+      description: Agrega productos a la lista de productos por su ID
+      responses:
+        "200":
+          description: Agrega productos por su id
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        "400":
+          description: Error
+
+    put:
+      summary: Actualiza la lista de Productos
+      tags:
+        - Productos
+      description: Actualiza la lista de productos
+      responses:
+        "200":
+          description: Actualiza productos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        "400":
+          description: Error
+
+    delete:
+      summary: Borra productos de la lista de Productos
+      tags:
+        - Productos
+      description: Borra productos de lista de productos
+      respondes:
+        "200":
+          description: Borra productos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string  
+        "400":
+          description: Error

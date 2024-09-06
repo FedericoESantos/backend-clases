@@ -1,0 +1,39 @@
+<div id="header">
+    <h2>Login</h2>
+    <a href="/"><img src="/img/logo-kataplum.png" alt="" id="logo"></a>
+</div>
+
+<hr>
+{{>menu}}
+<hr>
+<div id="content">
+
+
+<h3>Logueate Aquí</h3>
+
+    <br>
+
+    <form onsubmit="login(event)" action="/api/sessions/login" method="post" id="registro">
+
+        {{#if error}}
+        <div style="font-weight: bolder; color:red">
+            {{error}}
+        </div>
+        {{/if}}
+
+        {{#if mensaje}}
+        <div style="font-weight: bolder; color:rgb(17, 131, 27)">
+            {{mensaje}}
+        </div>
+        {{/if}}
+
+        <strong>Mail: </strong><input type="email" name="email" placeholder="correo electronico" id="email">
+        <strong>Password: </strong><input type="password" name="password" placeholder="contraseña" id="password">
+        <input type="text" name="web" value="web" hidden>
+        <br><br>
+        <input type="submit" value="Login" id="registrar">
+    </form>
+</div>
+{{>footer}}
+
+<script src="js/login.js"></script>

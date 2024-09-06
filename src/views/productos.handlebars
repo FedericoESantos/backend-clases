@@ -1,0 +1,46 @@
+<div id="header">
+    <h2>Productos</h2>
+    <a href="/"><img src="/img/logo-kataplum.png" alt="" id="logo"></a>
+</div>
+<hr>
+<h1>
+    ¡Bienvenido/@!
+    <span id="titulo-color">{{usuario.name}}
+        {{usuario.last_name}}</span>
+</h1>
+
+<hr>
+{{>menu}}
+<hr>
+<div id="content">
+
+
+    <input type="text" name="web" value="web" hidden>
+
+    {{#if error}}
+    <div id="error" style="font-weight: bolder; color:rgb(148, 16, 11)">
+        {{error}}
+    </div>
+    {{/if}}
+
+    <div id="productos">
+        {{#each productos}}
+        <div id="card">
+            <p><img src="{{image}}" alt="{{name}}"></p>
+            <p><strong>Nombre:</strong> {{name}}</p>
+            <p><strong>Description:</strong> {{description}}</p>
+            <p><strong>Categoria:</strong></p> {{category}}
+            <p><strong>Stock:</strong> {{stock}}</p>
+            <p><strong>Price:</strong></p> {{price}}
+            <button onclick="comprar('{{_id}}')" id="carrito">Agregar a Carrito</button>
+            <br>
+        </div>
+        {{/each}}
+    </div>
+    <a href="/carrito/{{usuario.carrito}}" id="botonCarrito"><img src="/img/carrito2.png" alt="" id="carrito2"></a>
+    <input type="text" value="{{usuario.carrito}}" id="IDcarrito" hidden />
+</div>
+{{>footer}}
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/productos.js"></script>

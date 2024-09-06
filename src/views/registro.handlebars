@@ -1,0 +1,40 @@
+<div id="header">
+    <h2>Registo</h2>
+    <a href="/"><img src="/img/logo-kataplum.png" alt="" id="logo"></a>
+</div>
+
+<hr>
+{{>menu}}
+<hr>
+<div id="content">
+
+<h3>Registrate Aquí</h3>
+
+    <br>
+
+    <form onsubmit="registro(event)" action="/api/sessions/registro" method="post" id="registro">
+
+        {{#if error}}
+        <div style="font-weight: bolder; color:red">
+            {{error}}
+        </div>
+        {{/if}}
+
+        {{#if exito}}
+        <div style="font-weight: bolder; color:rgb(27, 139, 17)">
+            {{exito}}
+        </div>
+        {{/if}}
+
+        <strong>Nombre: </strong><input type="text" name="name" placeholder="nombre">
+        <strong>Apellido: </strong><input type="text" name="last_name" placeholder="apellido">
+        <strong>Mail: </strong><input type="email" name="email" placeholder="correo electronico">
+        <strong>Password: </strong><input type="password" name="password" placeholder="contraseña">
+        <input type="text" name="web" value="web" hidden>
+        <br><br>
+        <input type="submit" value="Registrar" id="registrar">
+    </form>
+</div>
+{{>footer}}
+
+<script src="js/registro.js"></script>

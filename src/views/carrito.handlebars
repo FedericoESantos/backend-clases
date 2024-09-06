@@ -1,0 +1,30 @@
+<div id="header">
+    <h2>Carrito de Usuario : <span id="titulo-color">{{usuario.name}} {{usuario.last_name}}</span></h2>
+    <a href="/"><img src="/img/logo-kataplum.png" alt="" id="logo"></a>
+</div>
+
+<hr>
+{{>menu}}
+<hr>
+<div id="content">
+    
+    <h4>Aquí verás reflejada tus compras, disfrutalas, gozalas!</h4>
+
+    <ul id="carrito-prod">
+        {{#each productos}}
+        <li id="compra-carrito">
+            <strong>Nombre:</strong> {{producto.name}}<br>
+            <strong>Descripcion:</strong> {{producto.description}}<br>
+            <strong>Precio:</strong>{{producto.price}}<br>
+            <strong>Cantidad:</strong> {{cantidad}}<br>
+        </li>
+        {{/each}}
+    </ul>
+
+
+    <br>
+    <p><strong>Seguir Comprando</strong></p>
+    <a href="/productos"><img src="/img/carrito.png" alt="" id="imagen-carrito"></a>
+</div>
+
+{{>footer}}

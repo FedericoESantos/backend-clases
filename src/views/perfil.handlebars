@@ -1,0 +1,44 @@
+<div id="header">
+    <h2>Bienvenido Usuario <span id="titulo-color">{{usuario.name}} {{usuario.last_name}}</span></h2>
+    <a href="/"><img src="/img/logo-kataplum.png" alt="" id="logo"></a>
+</div>
+
+<h1>
+    Perfil de Usuario
+</h1>
+
+<hr>
+{{>menu}}
+<hr>
+
+<div id="content">
+
+    <br>
+    <div id="datos">
+        <h3>Tus datos registrados son:</h3>
+
+        <p>Nombre: <strong>{{usuario.name}}</strong> </p>
+        <p>Apellido: <strong>{{usuario.last_name}}</strong> </p>
+        <p>Correo Electrónico: <strong>{{usuario.email}}</strong> </p>
+
+    </div>
+
+    <div id="comprar">
+        <div>
+            <h3>Conoce nuestros Productos: </h3>
+            <a href="/productos">
+                <img src="./img/carrito.png" alt="" id="imagen-carrito">
+            </a>
+        </div>
+
+        <div id="mi-carrito">
+            <h3>Mi Carrito: </h3>
+            <a href="/carrito/{{usuario.carrito}}">
+                <img src="/img/mi-carrito.png" alt="" id="imagen-carrito">
+            </a>
+
+        </div>
+
+    </div>
+</div>
+{{>footer}}
