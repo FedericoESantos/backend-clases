@@ -6,4 +6,6 @@ export const router = Router();
 
 router.get('/:cid', CartController.getOneBy);
 
-router.post('/:cid/product/:pid', CartController.getCart); //le saque el auth porque mi usuario no tiene autorización
+router.get('/:cid/comprar', auth(["user"]), CartController.buyCart);
+
+router.post('/:cid/product/:pid', auth(["admin"]), CartController.getCart); 

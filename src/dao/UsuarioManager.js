@@ -20,7 +20,7 @@ export class UsuarioManager{
     }
 
     async getUsuarioBy(filtro){
-        return await usuariosModelo.findOne(filtro).lean();//.populate("carrito") y le agregue .lean()
+        return await usuariosModelo.findOne(filtro).lean();
     }
 
     async updateUser(id, usuario){

@@ -2,7 +2,6 @@ const comprar = async (pid) => {
     let inputCarrito = document.getElementById("IDcarrito");
     let cid = inputCarrito.value;
     
-    console.log(`Codigo producto ${pid} || Codigo Carrito ${cid}`);
     try {
         let respuesta = await fetch(`/api/carts/${cid}/product/${pid}`,{ method:"post" });
         if(respuesta.status == 400){
@@ -24,6 +23,9 @@ const comprar = async (pid) => {
                 timer: 3000
             });
             
+            }else{
+                let datos = await respuesta.json();
+                alert(datos.error);
             }
     } catch(error){ error.menssage }
 }

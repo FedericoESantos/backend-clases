@@ -56,7 +56,6 @@ export const initPassport = () => {
                     if (!validaPassword(password, usuario.password)) {
                         return done(null, false);
                     }
-                    console.log(usuario, "Desde passport.config")
                     return done(null, usuario);
                 } catch (error) {
                     return done(error);

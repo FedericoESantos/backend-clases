@@ -19,12 +19,17 @@
             <strong>Cantidad:</strong> {{cantidad}}<br>
         </li>
         {{/each}}
+
+        
     </ul>
 
 
     <br>
     <p><strong>Seguir Comprando</strong></p>
     <a href="/productos"><img src="/img/carrito.png" alt="" id="imagen-carrito"></a>
+
+    <p><strong>Finalizar Compra</strong></p>
+    <a href="/api/carts/{{cid}}/comprar"><img src="/img/dinero.png" alt="" id="imagen-carrito"></a>
 </div>
 
 {{>footer}}

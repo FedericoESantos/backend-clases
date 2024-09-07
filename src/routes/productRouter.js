@@ -9,6 +9,6 @@ router.get('/', ProductController.getAll);
 
 router.get("/:id", ProductController.getBy);
 
-router.post('/', upload.single("image"), ProductController.create);
+router.post('/', auth(["admin"]), upload.single("image"), ProductController.create);
 
-router.delete("/:id", ProductController.delete); //auth(["admin","premium"])
+router.delete("/:id", auth(["admin","premium"]), ProductController.delete); 

@@ -1,4 +1,5 @@
-import { Tipos_Error } from '../utils/Errors.js';
+import { CustomError } from '../errors/CustomError.js';
+import { Tipos_Error } from '../errors/Errors.js';
 import { productService } from '../service/Product.service.js';
 import { logger } from '../utils/winston.js';
 import { isValidObjectId } from 'mongoose';
@@ -10,45 +11,42 @@ export class ProductController {
 
         try {
             productos = await productService.getAll();
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(200).json({ productos });
         } catch (error) {
             console.log('error');
             res.setHeader('Content-Type', 'application/json');
             return logger.error(error.message);
         }
 
-        res.setHeader('Content-Type', 'application/json');
-        return res.status(200).json({ productos });
     }
 
     static getBy = async (req, res) => {
         let { id } = req.params;
-        
+
         if (!isValidObjectId(id)) {
-            res.setHeader('Content-Type', 'application/json');
-            return res.status(400).json({error:"ID Producto Inválido"});
+            return CustomError.generarError("Error productController", "ID producto invalido", "ID Producto Inválido", Tipos_Error.Codigo_http);
         }
-        let producto = await productService.getProductBy({_id:id});
-        if(!producto){
-            res.setHeader('Content-Type', 'application/json');
-            return res.status(400).json({error:`No existe producto con ID:${id}`});
+        let producto = await productService.getProductBy({ _id: id });
+        if (!producto) {
+            return CustomError.generarError("Error productController", "producto inexistente", `No existe producto con ID:${id}`, Tipos_Error.Codigo_http);
         }
         res.setHeader('Content-Type', 'application/json');
-        return res.status(200).json({payload: producto});
+        return res.status(200).json({ payload: producto });
     }
 
     static create = async (req, res) => {
-        let { name, description,image, stock, price, web, category } = req.body;
+        let { name, description, image, stock, price, web, category } = req.body;
 
-        if (req.file){   
+        if (req.file) {
             image = req.file;
-    }
+        }
 
-        if (!name || !description || !stock || !price ) {
+        if (!name || !description || !stock || !price || !category) {
             if (web) {
                 return res.redirect("/cargaProductos?error=faltan completar algunos campos")
             } else {
-                res.setHeader('Content-Type', 'application/json');
-                return res.status(400).json({ error: 'Faltan completar algunos campos' });
+                return CustomError.generarError("Error productController", "campos incompletos", "Faltan completar algunos campos", Tipos_Error.Codigo_http);
             }
         }
 
@@ -57,41 +55,67 @@ export class ProductController {
         try {
             existe = await productService.getProductBy({ name });
             if (existe) {
-                res.setHeader(`Content-Type`, `application/json`);
-                return res.status(400).json({error:`Ya existe ${name} en la base de datos`});
+                return CustomError.generarError("Error productController", "campos ya existentes", `Ya existe ${name} en la base de datos`, Tipos_Error.Codigo_http);
             }
 
         } catch (error) {
             console.log(error);
             res.setHeader('Content-Type', 'application/json');
-            return res.json({error:error.message});
+            return res.json({ error: error.message });
         }
 
         let nuevoProducto;
 
         try {
-            nuevoProducto = await productService.create({ image:`./img/products/${req.file.originalname}`, name, description, category, stock, price });
+            nuevoProducto = await productService.create({ image: `./img/products/${req.file.originalname}`, name, description, category, stock, price });
             req.io.emit("nuevoProd", nuevoProducto);
             if (web) {
                 return res.redirect(`/cargaProductos`);
             } else {
-                console.log(nuevoProducto);
                 res.setHeader(`Content-Type`, `application/json`);
                 return res.status(200).json({ nuevoProducto });
             }
         } catch (error) {
             console.log(error);
             res.setHeader('Content-Type', 'application/json');
-            return res.json({error:error.message});
+            return res.json({ error: error.message });
         }
+    }
+
+    static update = async (req, res) => {
+        let { id } = req.params;
+        let updates = req.body;  
+
+        if (!isValidObjectId(id)) {
+            return CustomError.generarError("Error productController", "ID producto invalido", "ID Producto Inválido", Tipos_Error.Codigo_http);
+        }
+
+        let productoActualizado;
+        try {
+            productoActualizado = await productService.update({ _id: id }, updates);
+
+            if (!productoActualizado) {
+                return CustomError.generarError("Error productController", "Producto no encontrado", `No se encontró el producto con ID: ${id}`, Tipos_Error.Codigo_http);
+            }
+        } catch (error) {
+            console.log(error);
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(400).json({ error: error.message });
+        }
+
+        let productos = await productService.getAll();
+        req.io.emit('productoActualizado', productos);
+
+        res.setHeader(`Content-Type`, `application/json`);
+        return res.status(200).json({ payload: 'Producto actualizado', productoActualizado });
+
     }
 
     static delete = async (req, res) => {
         let { id } = req.params;
-        
+
         if (!isValidObjectId(id)) {
-            res.setHeader('Content-Type', 'application/json');
-            return res.json({error:'ID debe ser un ObjectId Válido'});
+            return CustomError.generarError("Error productController", "ID producto invalido", "ID Producto Inválido", Tipos_Error.Codigo_http);
         }
 
         let productoEliminado;
@@ -100,7 +124,7 @@ export class ProductController {
         } catch (error) {
             console.log('error');
             res.setHeader('Content-Type', 'application/json');
-            return res.status(400).json({error:error.message});
+            return res.status(400).json({ error: error.message });
         }
 
         let productos = await productService.getAll();

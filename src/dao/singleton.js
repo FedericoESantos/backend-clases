@@ -1,4 +1,5 @@
 import mongoose from "mongoose"
+import { logger } from "../utils/winston.js";
 
 export class Singleton{
     static #instancia
@@ -8,12 +9,12 @@ export class Singleton{
 
     static conectar(url, db){
         if(this.#instancia){
-            console.log("Conexion previamente establecida");
+            logger.info("Conexion previamente establecida");
             return this.#instancia;
         }
 
         this.#instancia = new Singleton(url,db);
-        console.log("DB Conectada");
+        logger.info("DB Conectada");
         return this.#instancia;
     }
 

@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
     return res.status(200).render('home', { title: 'E-Commerce'});
 });
 
-router.get('/cargaProductos',async (req, res) => {
+router.get('/cargaProductos',auth(["admin"]), async (req, res) => {
     let productos;
     let { error } = req.query;
     try {
@@ -32,7 +32,7 @@ router.get('/cargaProductos',async (req, res) => {
     return res.status(200).render('realTime', { title: 'E-Commerce', productos, error });
 });
 
-router.get('/productos', auth(["user"]), async(req, res) => {
+router.get('/productos', auth(["user","admin"]), async(req, res) => {
     let { error } = req.query;
     let usuario = req.session.usuario;
     let cid = usuario.carrito;
@@ -61,19 +61,17 @@ router.get('/productos', auth(["user"]), async(req, res) => {
 
 });
 
-router.get("/carrito/:cid", async (req, res) => {
+router.get("/carrito/:cid", auth(["user"]),async (req, res) => {
     let { cid } = req.params;
     let usuario = req.session.usuario;
 
     if(!isValidObjectId(cid)){
-        res.setHeader(`Content-Type`,`application/json`);
-        return res.status(400).json({error:`Ingrese Cid / Pid validos`});
+        return CustomError.generarError("Error cartController", "carrito invalido", `El ID del carrito ${cid} no es valido`, Tipos_Error.Codigo_http);
     }
     
     let carrito = await cartManager.getOneByPopulate({_id:cid});
     if(!carrito){
-        res.setHeader(`Content-Type`,`application/json`);
-        return res.status(400).json({error:`Carrito inexistente: id${cid}`});
+        return CustomError.generarError("Error cartController", "carrito inexistente", `El carrito con ID ${cid} no existe en la base de datos`, Tipos_Error.Codigo_http);
     }
     
     let productos = carrito.productos;
@@ -82,7 +80,7 @@ router.get("/carrito/:cid", async (req, res) => {
     return res.status(200).render("carrito", { productos, usuario, title:`Carrito de ${usuario.name}`});
 })
 
-router.get("/usuarios", async(req,res)=>{
+router.get("/usuarios", auth(["admin"]) ,async(req,res)=>{
     let { pagina, error } = req.query;
     if(!pagina){
         pagina = 1;
@@ -122,7 +120,7 @@ router.get("/login",(req,res)=>{
     return res.status(200).render('login', { title: 'E-Commerce', error, exit, mensaje});
 })
 
-router.get("/perfil" ,(req,res)=>{
+router.get("/perfil", auth(["user"]), (req,res)=>{
     let usuario = req.session.usuario;
     res.setHeader('Content-Type', 'text/html');
     return res.status(200).render('perfil', { 

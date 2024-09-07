@@ -228,3 +228,89 @@ strong{
 #logo{
     width: 110px;
 }
+
+
+
+
+.presentacion{
+    width: 500x;
+    margin: auto;
+    margin-top: 50px;
+}
+.pre-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.box{
+    width: 200px;
+    height: 150px;
+    padding: 20px;
+    margin: 10px;
+    background: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 300ms;
+}
+.box:hover{
+    transform: translate(10px, -10px);
+    box-shadow: -10px 10px 20px -10px black;
+}
+.box .icon,
+.box h4,
+.box p{
+    position: relative;
+    z-index: 1;
+    transition: all 300ms;
+}
+.pre-box .icon{
+    width: 50px;
+    transform: translateY(30px);
+}
+.pre-box:hover .icon{
+    color: gainsboro;
+    font-size: 30px;
+    transform: translateY(0);
+}
+.box h4,
+.box{
+    margin-top: 10px;
+}
+.box h4{
+    font-size: 30px;
+    transform: translateY(30px);
+}
+.pre-box:hover h4{
+    transform: translateY(0);
+    color: white;
+}
+.box p{
+    font-size: 15px;
+    transform: translateY(100px);
+    opacity: 0;
+    padding-bottom: 20px;
+}
+.box:hover p{
+    transform: translateY(0);
+    opacity: 1;
+    color: whitesmoke;  
+}
+
+.box .back-hover{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top: 250px;
+    left: -170px;
+    border-radius: 100%;
+    transition: all 300ms; 
+    background: linear-gradient(to bottom, rgb(41, 41, 193), rgb(199, 129, 23));
+}
+.box:hover .back-hover{
+    width: 400px;
+    height: 400px;
+    top: -70px;
+    left: -70px;
+}

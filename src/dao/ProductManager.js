@@ -15,6 +15,10 @@ export class ProductManager{
         return nuevoProducto.toJSON();
     }
 
+    async update(id, producto){
+        return productosModelo.updateOne({_id:id}, producto);
+    }
+
     async delete(id){
         return await productosModelo.deleteOne(id);
     }

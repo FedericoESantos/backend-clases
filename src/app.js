@@ -58,10 +58,10 @@ if (cluster.isPrimary) {
     app.use(session({
         secret: "CoderCoder123",
         resave: false,
-        saveUninitialized: true,
+        saveUninitialized: false,
         store: MongoStore.create({
-            ttl: 3600,
             mongoUrl: "mongodb+srv://boomarts47:fede123@cluster0.z3tu5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0&dbName=E-Commerce",
+            ttl: 3600,
         })
     }));
 

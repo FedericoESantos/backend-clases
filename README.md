@@ -17,6 +17,7 @@ express-handlebars
 mongoose
 mongoose-paginate-v2
 multer
+nodemailer
 passport
 passport-github2
 passport-local
