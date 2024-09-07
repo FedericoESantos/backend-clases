@@ -61,7 +61,7 @@ router.get('/productos', auth(["user","admin"]), async(req, res) => {
 
 });
 
-router.get("/carrito/:cid", auth(["user"]),async (req, res) => {
+router.get("/carrito/:cid", auth(["user","admin"]),async (req, res) => {
     let { cid } = req.params;
     let usuario = req.session.usuario;
 
@@ -120,7 +120,7 @@ router.get("/login",(req,res)=>{
     return res.status(200).render('login', { title: 'E-Commerce', error, exit, mensaje});
 })
 
-router.get("/perfil", auth(["user"]), (req,res)=>{
+router.get("/perfil", auth(["user","admin"]), (req,res)=>{
     let usuario = req.session.usuario;
     res.setHeader('Content-Type', 'text/html');
     return res.status(200).render('perfil', { 

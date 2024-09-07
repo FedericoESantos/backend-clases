@@ -236,7 +236,11 @@ strong{
 .presentacion{
     width: 500x;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 20px;
+}
+.presentacion h2{
+    margin: 0px;
+    padding-bottom: 10px;
 }
 .pre-box{
     display: flex;
