@@ -220,6 +220,7 @@ h3{
     padding: 30px;
     border-style: groove;
     list-style: none;
+    background-color: rgba(71, 71, 156, 0.285);
 }
 strong{
     color: rgb(31, 31, 114);
