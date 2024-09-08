@@ -6,6 +6,8 @@ export const router = Router();
 
 router.get('/:cid', CartController.getOneBy);
 
-router.get('/:cid/comprar', auth(["user"]), CartController.buyCart);
+router.get('/:cid/comprar', CartController.buyCart);
 
 router.post('/:cid/product/:pid', auth(["admin"]), CartController.getCart); 
+
+router.post('/', CartController.createCart);

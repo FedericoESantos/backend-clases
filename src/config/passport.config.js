@@ -18,8 +18,8 @@ export const initPassport = () => {
             },
             async (req, username, password, done) => {
                 try {
-                    let { name, last_name } = req.body;
-                    if (!name || !last_name) {
+                    let { name, last_name, email, password } = req.body;
+                    if (!name || !last_name || !email || !password) {
                         return done(null, false)
                     }
 

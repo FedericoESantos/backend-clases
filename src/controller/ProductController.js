@@ -37,50 +37,42 @@ export class ProductController {
 
     static create = async (req, res) => {
         let { name, description, image, stock, price, web, category } = req.body;
-
+    
         if (req.file) {
             image = req.file;
         }
-
+    
         if (!name || !description || !stock || !price || !category) {
+            const errorMessage = "Faltan completar algunos campos";
             if (web) {
-                return res.redirect("/cargaProductos?error=faltan completar algunos campos")
+                return res.status(400).json({ error: errorMessage });
             } else {
-                return CustomError.generarError("Error productController", "campos incompletos", "Faltan completar algunos campos", Tipos_Error.Codigo_http);
+                return res.status(400).json({ error: errorMessage });
             }
         }
-
+    
         let existe;
-        let owner;
         try {
             existe = await productService.getProductBy({ name });
             if (existe) {
-                return CustomError.generarError("Error productController", "campos ya existentes", `Ya existe ${name} en la base de datos`, Tipos_Error.Codigo_http);
+                return res.status(400).json({ error: `Ya existe ${name} en la base de datos` });
             }
-
         } catch (error) {
             console.log(error);
-            res.setHeader('Content-Type', 'application/json');
-            return res.json({ error: error.message });
+            return res.status(500).json({ error: error.message });
         }
-
+    
         let nuevoProducto;
-
         try {
             nuevoProducto = await productService.create({ image: `./img/products/${req.file.originalname}`, name, description, category, stock, price });
             req.io.emit("nuevoProd", nuevoProducto);
-            if (web) {
-                return res.redirect(`/cargaProductos`);
-            } else {
-                res.setHeader(`Content-Type`, `application/json`);
-                return res.status(200).json({ nuevoProducto });
-            }
+            return res.status(201).json({ nuevoProducto });
         } catch (error) {
             console.log(error);
-            res.setHeader('Content-Type', 'application/json');
-            return res.json({ error: error.message });
+            return res.status(500).json({ error: error.message });
         }
     }
+    
 
     static update = async (req, res) => {
         let { id } = req.params;
@@ -113,7 +105,6 @@ export class ProductController {
 
     static delete = async (req, res) => {
         let { id } = req.params;
-
         if (!isValidObjectId(id)) {
             return CustomError.generarError("Error productController", "ID producto invalido", "ID Producto Inválido", Tipos_Error.Codigo_http);
         }

@@ -14,13 +14,13 @@ import { UsuarioManager } from "../dao/UsuarioManager.js";
     }
 
     getUsersByEmail = async(email)=>{
-        let usuarios = await this.dao.getAll();
+        let usuarios = await this.dao.getUsuarios();
         let usuario = usuarios.find(us=>us.email === email);
         return usuario;
     }
 
     createUser = async(usuario)=>{
-        return this.dao.create(usuario);
+        return this.dao.addUsuario(usuario);
     }
 
     updateUser = async()=>{

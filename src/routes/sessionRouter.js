@@ -47,13 +47,8 @@ router.get("/logout", (req, res) => {
     req.session.destroy((error) => {
         if (error) {
             console.error('Error al cerrar sesión:', error);
-            res.setHeader('Content-Type', 'application/json');
-            return res.status(500).json({ error: "Internal Server Error" });
         }
         console.log('Sesión cerrada correctamente');
         return res.redirect("/login?mensaje=Secion cerrada con exito!!! Hasta pronto :D");
     });
-    res.setHeader("Content-Type","application/json");
-    return res.status(200).json({status:"success", message:"Usuario deslogueado"});
 });
-

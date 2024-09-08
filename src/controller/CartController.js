@@ -29,6 +29,27 @@ export class CartController {
         
     }
 
+    static createCart = async (req, res, next) => {
+        try {
+            const datosCart = req.body;
+    
+            if (!datosCart) {
+                return CustomError.generarError("Error cartController", "Datos inválidos", "Los datos del carrito son inválidos", Tipos_Error.Codigo_http);
+            }
+
+            const nuevoCarrito = await cartsService.create(datosCart);
+
+            if (!nuevoCarrito) {
+                return CustomError.generarError("Error cartController", "No se pudo crear el carrito", "Error al crear el carrito", Tipos_Error.Codigo_http);
+            }
+
+            res.setHeader('Content-Type', 'application/json');
+            return res.status(201).json({ mensaje: 'Carrito creado exitosamente', carrito: nuevoCarrito });
+        } catch (error) {
+            next(error);
+        }
+    }
+
     static buyCart = async (req,res) =>{
         let { cid } = req.params;
         if (!isValidObjectId(cid)) {

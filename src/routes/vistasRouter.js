@@ -38,7 +38,7 @@ router.get('/productos', auth(["user","admin"]), async(req, res) => {
     let cid = usuario.carrito;
      
     let carrito; 
-    carrito = await cartManager.getOneByPopulate({_id:cid});
+    carrito = await cartManager.getOneBy({_id:cid});
     if(!carrito){
         carrito = await productManager.create();
     }
@@ -61,7 +61,7 @@ router.get('/productos', auth(["user","admin"]), async(req, res) => {
 
 });
 
-router.get("/carrito/:cid", auth(["user","admin"]),async (req, res) => {
+router.get("/carrito/:cid", auth(["user","admin"]), async (req, res) => {
     let { cid } = req.params;
     let usuario = req.session.usuario;
 

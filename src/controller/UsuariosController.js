@@ -41,65 +41,60 @@ export class UsuariosController {
         let { name, email, last_name, password } = req.body;
         if (!name || !last_name || !email || !password) {
             res.setHeader(`Content-Type`, `application/json`);
-            return logger.debug("Faltan datos: Nombre, Apellido, Email Y Password");
+            return CustomError.generarError("Error cartController", "faltan datos", `Faltan completar datos`, Tipos_Error.Codigo_http);
+        }
+
+        if (!name || !email || !last_name || !password) {
+            const errorMessage = "Faltan completar algunos campos";
+            res.setHeader(`Content-Type`, `application/json`);
+                return res.status(400).json({ error: errorMessage });
+
         }
 
         let existe;
         try {
             existe = await usuariosService.getUsersByEmail({ email });
             if (existe) {
-                return CustomError.generarError("Error cartController", "carrito existente", `El usuario con email ${email} ya existe en la base de datos`, Tipos_Error.Codigo_http);
+                return res.status(400).json({ error: `Ya existe ${email} en la base de datos` });
             }
         } catch (error) {
-            res.setHeader('Content-Type', 'application/json');
-            return logger.error(error.message);
+            console.log(error);
+            return res.status(500).json({ error: error.message });
         }
-
+        let nuevoUsuario;
         try {
-            let nuevoUsuario = await usuariosService.createUser({ id, name, email, last_name, password: generaHash(password), rol: "user" });
-            res.setHeader(`Content-Type`, `application/json`);
-            return res.status(200).json({ payload: nuevoUsuario });
+            nuevoUsuario = await usuariosService.createUser({ name, email, last_name, password: generaHash(password), rol: "user" });
+            return res.status(201).json({ payload: nuevoUsuario });
         } catch (error) {
             console.log(error);
-            res.setHeader('Content-Type', 'application/json');
-            return logger.error(error.message);
+            return res.status(500).json({ error: error.message });
         }
     }
 
     static updateUsers = async (req, res) => {
         let { id } = req.params;
+        let updates = req.body;  
+
         if (!isValidObjectId(id)) {
             return CustomError.generarError("Error cartController", "usuario invalido", `Ingrese un ID valido de Mongoose`, Tipos_Error.Codigo_http);
         }
 
-        let aModificar = req.body;
-
-        if (aModificar._id) {
-            delete aModificar._id;
-        }
-
-        if (aModificar.email) {
-            let existe;
-            try {
-                existe = await usuariosService.getUsersBy({ _id: { $ne: id }, email: aModificar.email });
-                if (existe) {
-                    return CustomError.generarError("Error cartController", "usuario ya existente", `El usuario con email ${aModificar.email} ya existe en la base de datos`, Tipos_Error.Codigo_http);
-                }
-            } catch (error) {
-                console.log(error);
-                res.setHeader('Content-Type', 'application/json');
-                return logger.error(error.message);
-            }
-        }
-
+        let usuarioActualizado;
+        
         try {
-            let usuarioModificado = await usuariosService.updateUser(id, aModificar);
-            res.setHeader(`Content-Type`, `application/json`);
-            return res.status(200).json({ usuarioModificado });
+            usuarioActualizado = await usuariosService.updateUser({ _id: id }, updates);
+            if (!usuarioActualizado) {
+                return CustomError.generarError("Error usuarioController", "Usuario no encontrado", `No se encontró el usuario con ID: ${id}`, Tipos_Error.Codigo_http);
+            }
         } catch (error) {
+            console.log(error);
             res.setHeader('Content-Type', 'application/json');
-            return logger.error(error.message);
+            return res.status(400).json({ error: error.message });
         }
+        
+        res.setHeader(`Content-Type`, `application/json`);
+        return res.status(200).json({ payload: 'Usuario actualizado', usuarioActualizado });
+
     }
 
     static updateUserPremium = async (req,res) =>{
@@ -130,19 +125,17 @@ export class UsuariosController {
             return CustomError.generarError("Error cartController", "usuario invalido", `Ingrese un ID valido de Mongoose`, Tipos_Error.Codigo_http);
         }
 
+        let resultado;
         try {
-            let resultado = await usuariosService.deleteUser(id);
-            if (resultado.deletedCount > 0) {
-                res.setHeader(`Content-Type`, `application/json`);
-                return logger.debug({ payload: `Usuario con ID ${id} eliminado` });
-            } else {
-                return CustomError.generarError("Error cartController", "usuario inexistente", `No existen usuarios con id ${id}`, Tipos_Error.Codigo_http);
-            }
+            resultado = await usuariosService.deleteUser({_id:id});
         } catch (error) {
-            console.log(error);
+            console.log('error');
             res.setHeader('Content-Type', 'application/json');
-            return logger.error(error.message);
+            return res.status(400).json({ error: error.message });
         }
+        let usuarios = await usuariosService.getUsers();
+        res.setHeader(`Content-Type`, `application/json`);
+        return res.status(200).json({ payload: 'usuario eliminado' });
     }
 
 }
