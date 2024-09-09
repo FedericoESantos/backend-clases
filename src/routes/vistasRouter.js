@@ -75,6 +75,7 @@ router.get("/carrito/:cid", auth(["user","admin"]), async (req, res) => {
     }
     
     let productos = carrito.productos;
+    console.log(productos);
     
     res.setHeader(`Content-Type`, `text/html`);
     return res.status(200).render("carrito", { productos, usuario, title:`Carrito de ${usuario.name}`});

@@ -52,18 +52,22 @@ export class CartController {
 
     static buyCart = async (req,res) =>{
         let { cid } = req.params;
+        
         if (!isValidObjectId(cid)) {
             return CustomError.generarError("Error cartController", "carrito invalido", `El ID del carrito ${cid} no es valido`, Tipos_Error.Codigo_http);
         }
 
         let carrito = await cartsService.getOneBy({ _id: cid });
+
         if (!carrito) {
             return CustomError.generarError("Error cartController", "carrito inexistente", `El carrito con ID ${cid} no existe en la base de datos`, Tipos_Error.Codigo_http);
         }
-
+        
         if(carrito.productos.length===0){
             return CustomError.generarError("Error cartController", "carrito sin items", `El carrito con ID ${cid} no tiene items`, Tipos_Error.Codigo_http);
         }
+
+        console.log("SUPUESTAMENTE ESTAN LOS PRODUCTOS",carrito.productos);
 
         let conStock = [];
         let sinStock = [];

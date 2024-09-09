@@ -24,7 +24,7 @@ export class UsuarioManager{
     }
 
     async updateUser(id, usuario){
-        return await usuariosModelo.updateOne(id, usuario, {runValidators:true, returnDocument:"after"});
+        return await usuariosModelo.findByIdAndUpdate(id, usuario, {runValidators:true, returnDocument:"after"});
     }
 
     async deleteUser(id){

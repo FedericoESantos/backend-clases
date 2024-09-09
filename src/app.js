@@ -77,7 +77,6 @@ if (cluster.isPrimary) {
     app.use("/api/carts", carritoRouter);
     app.use("/api/sessions", sessionRouter);
 
-
     app.use('/', vistasRouter);
 
     const serverHTP = app.listen(port, () => {

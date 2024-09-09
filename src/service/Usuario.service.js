@@ -23,8 +23,8 @@ import { UsuarioManager } from "../dao/UsuarioManager.js";
         return this.dao.addUsuario(usuario);
     }
 
-    updateUser = async()=>{
-        return this.dao.updateUser();
+    updateUser = async(id, usuario)=>{
+        return this.dao.updateUser(id, usuario);
     }
 
     deleteUser = async(id)=>{

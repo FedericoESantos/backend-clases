@@ -6,6 +6,9 @@ import { CustomError } from '../errors/CustomError.js';
 
 import { logger } from '../utils/winston.js';
 
+import { CartController } from './CartController.js';
+import { cartsService } from '../service/Carts.service.js';
+
 export class UsuariosController {
 
     static getUsers = async (req, res) => {
@@ -52,6 +55,7 @@ export class UsuariosController {
         }
 
         let existe;
+        
         try {
             existe = await usuariosService.getUsersByEmail({ email });
             if (existe) {
@@ -62,8 +66,10 @@ export class UsuariosController {
             return res.status(500).json({ error: error.message });
         }
         let nuevoUsuario;
+        let nuevoCarrito;
         try {
-            nuevoUsuario = await usuariosService.createUser({ name, email, last_name, password: generaHash(password), rol: "user" });
+            nuevoCarrito = await cartsService.create({producto: []});
+            nuevoUsuario = await usuariosService.createUser({ name, email, last_name, password: generaHash(password), rol: "user", carrito: nuevoCarrito._id });
             return res.status(201).json({ payload: nuevoUsuario });
         } catch (error) {
             console.log(error);
