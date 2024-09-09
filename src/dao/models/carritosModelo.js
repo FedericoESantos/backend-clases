@@ -8,10 +8,16 @@ export const carritoModelo = mongoose.model(
                 type: [
                     {
                         producto: {type: mongoose.Types.ObjectId, ref: "productos"},
-                        cantidad: Number
+                        cantidad: {
+                            type: Number,
+                            required: true,
+                        }
                     }
                 ]
-            }
+            } 
+        },
+        {
+            timestamps: true 
         }
     )
 )

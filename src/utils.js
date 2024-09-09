@@ -22,6 +22,7 @@ export const upload = multer({storage:storage});
 export const generaHash = password => bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 export const validaPassword=(password, passwordHash) => bcrypt.compareSync(password, passwordHash);
 
+
 const transporter = nodemailer.createTransport(
     {
         service:"gmail",
@@ -29,15 +30,15 @@ const transporter = nodemailer.createTransport(
         auth:{
             user: "boomarts47@gmail.com",
             pass: " ypsu ahqu hnpr vjma"
-        }
-    }
-)
+        },
+    });
 
 export const enviarMail = async(to, subject, message) =>{
     return transporter.sendMail(
         {
             from: "Kataplum Artistico, una empresa lider en las creaciones 3D, boomarts47@gmail.com",
             to: to,
+            subject: subject,
             html: message 
         }
     )

@@ -7,7 +7,7 @@ export class CartManager{
     }
 
     async getOneBy(filtro={}){
-        return await carritoModelo.findOne(filtro).lean();
+        return await carritoModelo.findOne(filtro).populate("productos");
     }
     
     async getOneByPopulate(filtro={}){

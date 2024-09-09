@@ -4,7 +4,7 @@ export const ticketModelo = mongoose.model(
     "ticket",
     new mongoose.Schema(
         {
-            nroComprob:{ type: String, unique: true},
+            nroComprob: { type: Number, required: true, unique: true },
             fecha: Date,
             comprador: String,
             items: Array,
