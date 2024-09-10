@@ -50,7 +50,7 @@ export class CartController {
         }
     }
 
-    static buyCart = async (req, res) => {
+    static buyCart = async (req, res, next) => {
         let { cid } = req.params;
 
         if (!isValidObjectId(cid)) {

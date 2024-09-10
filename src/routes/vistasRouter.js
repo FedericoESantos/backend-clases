@@ -100,7 +100,23 @@ router.get("/usuarios", auth(["admin"]) ,async(req,res)=>{
         error
     });
 })
- 
+
+router.get('/chat', auth(["admin","user"]), (req, res) => {
+    let { error, web } = req.query;
+    let usuario = req.session.usuario;
+    
+    if(!usuario){
+        if(web){
+            return res.redirect("/chat?error=No existe usuario autenticado")
+        }
+        res.setHeader('Content-Type','application/json');
+        return res.status(400).json({error:'No existe usuario autenticado'});
+    }
+    
+    res.setHeader('Content-Type', 'text/html');
+    return res.status(200).render('chat', { title: 'E-Commerce', error, usuario});
+});
+
 router.get("/registro", (req,res)=>{
     let { error, exito } = req.query;
 

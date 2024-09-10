@@ -2758,3 +2758,315 @@
 {"level":"info","message":"DB Conectada","timestamp":"2024-09-09T08:59:10.875Z"}
 {"level":"info","message":"Server escuchando en puerto 8000 - pid: 17168 - worker: 1","timestamp":"2024-09-09T08:59:10.881Z"}
 {"level":"info","message":"Server escuchando en puerto 8000 - pid: 17168 - worker: 1","timestamp":"2024-09-09T08:59:10.881Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:05:22.575Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:05:22.575Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:05:22.577Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 12256 - worker: 1","timestamp":"2024-09-10T06:05:22.578Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:05:22.576Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:05:22.576Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:05:22.576Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 15632 - worker: 3","timestamp":"2024-09-10T06:05:22.580Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 12256 - worker: 1","timestamp":"2024-09-10T06:05:22.578Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 15632 - worker: 3","timestamp":"2024-09-10T06:05:22.580Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 5464 - worker: 2","timestamp":"2024-09-10T06:05:22.580Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 5464 - worker: 2","timestamp":"2024-09-10T06:05:22.580Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:10:28.425Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:10:28.425Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:10:28.424Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:10:28.424Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 16856 - worker: 3","timestamp":"2024-09-10T06:10:28.429Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 10620 - worker: 1","timestamp":"2024-09-10T06:10:28.428Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 16856 - worker: 3","timestamp":"2024-09-10T06:10:28.429Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 10620 - worker: 1","timestamp":"2024-09-10T06:10:28.428Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:10:28.451Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:10:28.451Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 6188 - worker: 2","timestamp":"2024-09-10T06:10:28.457Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 6188 - worker: 2","timestamp":"2024-09-10T06:10:28.457Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:11:17.440Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:11:17.440Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:11:17.440Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:11:17.440Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 10684 - worker: 2","timestamp":"2024-09-10T06:11:17.444Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 10684 - worker: 2","timestamp":"2024-09-10T06:11:17.444Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 11140 - worker: 1","timestamp":"2024-09-10T06:11:17.444Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 11140 - worker: 1","timestamp":"2024-09-10T06:11:17.444Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:11:17.460Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:11:17.460Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 20552 - worker: 3","timestamp":"2024-09-10T06:11:17.464Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 20552 - worker: 3","timestamp":"2024-09-10T06:11:17.464Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:12:21.078Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:12:21.077Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 1572 - worker: 1","timestamp":"2024-09-10T06:12:21.081Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 1572 - worker: 1","timestamp":"2024-09-10T06:12:21.081Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:12:21.080Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:12:21.080Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 20772 - worker: 3","timestamp":"2024-09-10T06:12:21.083Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 20772 - worker: 3","timestamp":"2024-09-10T06:12:21.083Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:12:21.082Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T06:12:21.081Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 11564 - worker: 2","timestamp":"2024-09-10T06:12:21.085Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 11564 - worker: 2","timestamp":"2024-09-10T06:12:21.085Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:33:31.016Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:33:31.015Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 5324 - worker: 1","timestamp":"2024-09-10T13:33:31.019Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 5324 - worker: 1","timestamp":"2024-09-10T13:33:31.019Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:33:31.018Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:33:31.017Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 9528 - worker: 2","timestamp":"2024-09-10T13:33:31.021Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 9528 - worker: 2","timestamp":"2024-09-10T13:33:31.021Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:33:31.019Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:33:31.018Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 19684 - worker: 3","timestamp":"2024-09-10T13:33:31.022Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 19684 - worker: 3","timestamp":"2024-09-10T13:33:31.022Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:33:40.303Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:33:40.303Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 7016 - worker: 1","timestamp":"2024-09-10T13:33:40.307Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 7016 - worker: 1","timestamp":"2024-09-10T13:33:40.306Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:33:40.313Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:33:40.312Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 21028 - worker: 3","timestamp":"2024-09-10T13:33:40.317Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 21028 - worker: 3","timestamp":"2024-09-10T13:33:40.316Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:33:40.314Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:33:40.313Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 17352 - worker: 2","timestamp":"2024-09-10T13:33:40.317Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 17352 - worker: 2","timestamp":"2024-09-10T13:33:40.317Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:39:14.505Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:39:14.505Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 18900 - worker: 3","timestamp":"2024-09-10T13:39:14.509Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 18900 - worker: 3","timestamp":"2024-09-10T13:39:14.509Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:39:14.504Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:39:14.504Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 12032 - worker: 1","timestamp":"2024-09-10T13:39:14.509Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 12032 - worker: 1","timestamp":"2024-09-10T13:39:14.509Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:39:14.518Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:39:14.518Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 18400 - worker: 2","timestamp":"2024-09-10T13:39:14.522Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 18400 - worker: 2","timestamp":"2024-09-10T13:39:14.522Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:40:08.209Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:40:08.209Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 11324 - worker: 2","timestamp":"2024-09-10T13:40:08.213Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 11324 - worker: 2","timestamp":"2024-09-10T13:40:08.213Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:40:08.212Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:40:08.211Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 316 - worker: 1","timestamp":"2024-09-10T13:40:08.215Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 316 - worker: 1","timestamp":"2024-09-10T13:40:08.215Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:40:08.213Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:40:08.212Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 16292 - worker: 3","timestamp":"2024-09-10T13:40:08.218Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 16292 - worker: 3","timestamp":"2024-09-10T13:40:08.218Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:40:24.401Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:40:24.401Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 1064 - worker: 2","timestamp":"2024-09-10T13:40:24.405Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 1064 - worker: 2","timestamp":"2024-09-10T13:40:24.405Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:40:24.402Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:40:24.402Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 7400 - worker: 3","timestamp":"2024-09-10T13:40:24.406Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 7400 - worker: 3","timestamp":"2024-09-10T13:40:24.406Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:40:24.402Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:40:24.402Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 14388 - worker: 1","timestamp":"2024-09-10T13:40:24.408Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 14388 - worker: 1","timestamp":"2024-09-10T13:40:24.407Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:41:41.611Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:41:41.610Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 14384 - worker: 1","timestamp":"2024-09-10T13:41:41.615Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 14384 - worker: 1","timestamp":"2024-09-10T13:41:41.615Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:41:41.618Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:41:41.618Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 3924 - worker: 2","timestamp":"2024-09-10T13:41:41.622Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 3924 - worker: 2","timestamp":"2024-09-10T13:41:41.622Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:41:41.619Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:41:41.618Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 18560 - worker: 3","timestamp":"2024-09-10T13:41:41.624Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 18560 - worker: 3","timestamp":"2024-09-10T13:41:41.624Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:41:53.100Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:41:53.100Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 4564 - worker: 2","timestamp":"2024-09-10T13:41:53.104Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 4564 - worker: 2","timestamp":"2024-09-10T13:41:53.104Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:41:53.102Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:41:53.101Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:41:53.103Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:41:53.102Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 6716 - worker: 1","timestamp":"2024-09-10T13:41:53.106Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 6716 - worker: 1","timestamp":"2024-09-10T13:41:53.106Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 13824 - worker: 3","timestamp":"2024-09-10T13:41:53.106Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 13824 - worker: 3","timestamp":"2024-09-10T13:41:53.106Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:44:05.662Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:44:05.661Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 17096 - worker: 1","timestamp":"2024-09-10T13:44:05.665Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 17096 - worker: 1","timestamp":"2024-09-10T13:44:05.665Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:44:05.661Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:44:05.662Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:44:05.661Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:44:05.662Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 18464 - worker: 3","timestamp":"2024-09-10T13:44:05.666Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 18464 - worker: 3","timestamp":"2024-09-10T13:44:05.666Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 7620 - worker: 2","timestamp":"2024-09-10T13:44:05.667Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 7620 - worker: 2","timestamp":"2024-09-10T13:44:05.667Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:46:17.861Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:46:17.861Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 16116 - worker: 1","timestamp":"2024-09-10T13:46:17.865Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:46:17.861Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:46:17.860Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 16116 - worker: 1","timestamp":"2024-09-10T13:46:17.864Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:46:17.861Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:46:17.860Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 13508 - worker: 3","timestamp":"2024-09-10T13:46:17.864Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 268 - worker: 2","timestamp":"2024-09-10T13:46:17.864Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 13508 - worker: 3","timestamp":"2024-09-10T13:46:17.864Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 268 - worker: 2","timestamp":"2024-09-10T13:46:17.864Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:48:16.310Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:48:16.310Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 3968 - worker: 2","timestamp":"2024-09-10T13:48:16.314Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 3968 - worker: 2","timestamp":"2024-09-10T13:48:16.314Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:48:16.311Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:48:16.310Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 12872 - worker: 1","timestamp":"2024-09-10T13:48:16.314Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 12872 - worker: 1","timestamp":"2024-09-10T13:48:16.314Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:48:16.309Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:48:16.309Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 17128 - worker: 3","timestamp":"2024-09-10T13:48:16.314Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 17128 - worker: 3","timestamp":"2024-09-10T13:48:16.314Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:50:02.620Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:50:02.619Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 12072 - worker: 3","timestamp":"2024-09-10T13:50:02.624Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 12072 - worker: 3","timestamp":"2024-09-10T13:50:02.624Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:50:02.619Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:50:02.619Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 15240 - worker: 2","timestamp":"2024-09-10T13:50:02.625Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 15240 - worker: 2","timestamp":"2024-09-10T13:50:02.625Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:50:02.622Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:50:02.622Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 13972 - worker: 1","timestamp":"2024-09-10T13:50:02.626Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 13972 - worker: 1","timestamp":"2024-09-10T13:50:02.625Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:51:17.886Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:51:17.886Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 19696 - worker: 2","timestamp":"2024-09-10T13:51:17.890Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 19696 - worker: 2","timestamp":"2024-09-10T13:51:17.890Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:51:17.886Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:51:17.885Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 13100 - worker: 1","timestamp":"2024-09-10T13:51:17.890Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 13100 - worker: 1","timestamp":"2024-09-10T13:51:17.889Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:51:17.886Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:51:17.885Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 1308 - worker: 3","timestamp":"2024-09-10T13:51:17.891Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 1308 - worker: 3","timestamp":"2024-09-10T13:51:17.891Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:56:43.573Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:56:43.572Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 13824 - worker: 2","timestamp":"2024-09-10T13:56:43.576Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 13824 - worker: 2","timestamp":"2024-09-10T13:56:43.576Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:56:43.575Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:56:43.574Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 12012 - worker: 3","timestamp":"2024-09-10T13:56:43.578Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 12012 - worker: 3","timestamp":"2024-09-10T13:56:43.578Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:56:43.573Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:56:43.573Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 13964 - worker: 1","timestamp":"2024-09-10T13:56:43.577Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 13964 - worker: 1","timestamp":"2024-09-10T13:56:43.577Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:57:51.170Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:57:51.169Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 8140 - worker: 2","timestamp":"2024-09-10T13:57:51.174Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 8140 - worker: 2","timestamp":"2024-09-10T13:57:51.174Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:57:51.177Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:57:51.176Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 8528 - worker: 3","timestamp":"2024-09-10T13:57:51.180Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 8528 - worker: 3","timestamp":"2024-09-10T13:57:51.180Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:57:51.179Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T13:57:51.178Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 18692 - worker: 1","timestamp":"2024-09-10T13:57:51.182Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 18692 - worker: 1","timestamp":"2024-09-10T13:57:51.182Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:00:18.017Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:00:18.016Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 11596 - worker: 2","timestamp":"2024-09-10T14:00:18.020Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 11596 - worker: 2","timestamp":"2024-09-10T14:00:18.020Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:00:18.022Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:00:18.021Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 8472 - worker: 1","timestamp":"2024-09-10T14:00:18.026Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 8472 - worker: 1","timestamp":"2024-09-10T14:00:18.026Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:00:18.028Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:00:18.027Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 11712 - worker: 3","timestamp":"2024-09-10T14:00:18.031Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 11712 - worker: 3","timestamp":"2024-09-10T14:00:18.031Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:00:38.319Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:00:38.319Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 19776 - worker: 3","timestamp":"2024-09-10T14:00:38.323Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 19776 - worker: 3","timestamp":"2024-09-10T14:00:38.323Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:00:38.321Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:00:38.320Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 10344 - worker: 1","timestamp":"2024-09-10T14:00:38.324Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 10344 - worker: 1","timestamp":"2024-09-10T14:00:38.324Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:00:38.324Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:00:38.324Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 8376 - worker: 2","timestamp":"2024-09-10T14:00:38.328Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 8376 - worker: 2","timestamp":"2024-09-10T14:00:38.328Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:12:21.448Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:12:21.447Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 7024 - worker: 1","timestamp":"2024-09-10T14:12:21.452Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 7024 - worker: 1","timestamp":"2024-09-10T14:12:21.452Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:12:21.448Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:12:21.447Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 21324 - worker: 2","timestamp":"2024-09-10T14:12:21.453Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 21324 - worker: 2","timestamp":"2024-09-10T14:12:21.453Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:12:21.450Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:12:21.450Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 15940 - worker: 3","timestamp":"2024-09-10T14:12:21.454Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 15940 - worker: 3","timestamp":"2024-09-10T14:12:21.454Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:12:37.443Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:12:37.443Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 15972 - worker: 1","timestamp":"2024-09-10T14:12:37.447Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 15972 - worker: 1","timestamp":"2024-09-10T14:12:37.447Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:12:37.445Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:12:37.441Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:12:37.445Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:12:37.441Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 3688 - worker: 3","timestamp":"2024-09-10T14:12:37.449Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 11852 - worker: 2","timestamp":"2024-09-10T14:12:37.445Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 3688 - worker: 3","timestamp":"2024-09-10T14:12:37.449Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 11852 - worker: 2","timestamp":"2024-09-10T14:12:37.445Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:19:52.467Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:19:52.467Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 17172 - worker: 3","timestamp":"2024-09-10T14:19:52.471Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 17172 - worker: 3","timestamp":"2024-09-10T14:19:52.471Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:19:52.468Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:19:52.468Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 20672 - worker: 1","timestamp":"2024-09-10T14:19:52.472Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 20672 - worker: 1","timestamp":"2024-09-10T14:19:52.472Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:19:52.465Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:19:52.465Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 14936 - worker: 2","timestamp":"2024-09-10T14:19:52.471Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 14936 - worker: 2","timestamp":"2024-09-10T14:19:52.471Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:26:35.648Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:26:35.648Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 11108 - worker: 3","timestamp":"2024-09-10T14:26:35.652Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 11108 - worker: 3","timestamp":"2024-09-10T14:26:35.652Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:26:35.650Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:26:35.650Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 20612 - worker: 2","timestamp":"2024-09-10T14:26:35.654Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 20612 - worker: 2","timestamp":"2024-09-10T14:26:35.654Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:26:35.657Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:26:35.657Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 10156 - worker: 1","timestamp":"2024-09-10T14:26:35.661Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 10156 - worker: 1","timestamp":"2024-09-10T14:26:35.661Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:33:58.627Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:33:58.627Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 5716 - worker: 1","timestamp":"2024-09-10T14:33:58.631Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 5716 - worker: 1","timestamp":"2024-09-10T14:33:58.631Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:33:58.628Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:33:58.627Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 10744 - worker: 2","timestamp":"2024-09-10T14:33:58.631Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 10744 - worker: 2","timestamp":"2024-09-10T14:33:58.631Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:33:58.629Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:33:58.629Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 10664 - worker: 3","timestamp":"2024-09-10T14:33:58.633Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 10664 - worker: 3","timestamp":"2024-09-10T14:33:58.633Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:35:10.972Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:35:10.972Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 15852 - worker: 1","timestamp":"2024-09-10T14:35:10.976Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 15852 - worker: 1","timestamp":"2024-09-10T14:35:10.976Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:35:10.974Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:35:10.973Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 5704 - worker: 3","timestamp":"2024-09-10T14:35:10.978Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 5704 - worker: 3","timestamp":"2024-09-10T14:35:10.978Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:35:10.974Z"}
+{"level":"info","message":"DB Conectada","timestamp":"2024-09-10T14:35:10.974Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 7896 - worker: 2","timestamp":"2024-09-10T14:35:10.980Z"}
+{"level":"info","message":"Server escuchando en puerto 8000 - pid: 7896 - worker: 2","timestamp":"2024-09-10T14:35:10.980Z"}

@@ -183,6 +183,7 @@ h3{
     flex-wrap: wrap;
     border-style: groove;
     margin-bottom: 150px;
+    padding-left: 35px;
 }
 #footer{
     width: 100%;
@@ -229,9 +230,6 @@ strong{
 #logo{
     width: 110px;
 }
-
-
-
 
 .presentacion{
     width: 500x;
@@ -319,4 +317,30 @@ strong{
     height: 400px;
     top: -70px;
     left: -70px;
+}
+
+#mensajes{
+    text-align: left;
+    margin-top: 20px;
+    width: 90%;
+    height: 350px;
+    overflow: scroll;
+    box-shadow: 0px 0px 5px rgba(29, 29, 112, 0.693);
+    padding: 10px;
+    background-color: rgba(93, 93, 166, 0.607);
+}
+#mensajes span{
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+font-weight: bold;
+
+
+}
+#mensaje{
+    border: 1px solid rgba(167, 167, 203, 0.767);
+    border-radius: 8px;
+    padding: 5px;
+    background-color: beige;
+    display:  inline-block;
+    margin-top: 10px;
 }

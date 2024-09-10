@@ -1,0 +1,41 @@
+<div id="header"></div>
+<h2>Chat</h2>
+<a href="/"><img src="/img/logo-kataplum.png" alt="" id="logo"></a>
+</div>
+<hr>
+<h1>
+    ¡Bienvenido/@!
+    <span id="titulo-color">{{usuario.name}}
+        {{usuario.last_name}}</span>
+</h1>
+<h2>
+    Unete a la red social para conocer a los demas usuarios!!! :D
+</h2>
+
+<hr>
+{{>menu}}
+<hr>
+<div id="content">
+    <input type="text" name="web" value="web" hidden>
+
+    {{#if error}}
+    <div id="error" style="font-weight: bolder; color:rgb(245, 182, 9)">
+        {{error}}
+    </div>
+    {{/if}}
+
+    <input type="text" id="mensaje">
+
+    <div id="mensajes">
+        <br>
+        <br>
+
+    </div>
+
+</div>
+
+{{>footer}}
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>

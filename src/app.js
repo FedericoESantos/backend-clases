@@ -29,6 +29,8 @@ if (cluster.isPrimary) {
     const app = express();
 
     let io;
+    let usuarios = [];
+    let mensajes = [];
 
     app.engine('handlebars', engine());
     app.set('view engine', 'handlebars');
@@ -39,16 +41,16 @@ if (cluster.isPrimary) {
     app.use(express.urlencoded({ extended: true }));
     app.use(cors());
 
-    const options ={
-        definition:{
-            openapi:"3.0.0",
-            info:{
-                title:"Api E-Commerce",
+    const options = {
+        definition: {
+            openapi: "3.0.0",
+            info: {
+                title: "Api E-Commerce",
                 version: "1.0.0",
                 description: "Documentacion del endpoint de Productos y de Carrito"
             },
         },
-        apis: [ "./src/docs/*.yaml" ]
+        apis: ["./src/docs/*.yaml"]
     }
     const especific = swaggerJSDoc(options);
     app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(especific));
@@ -87,6 +89,27 @@ if (cluster.isPrimary) {
 
     Singleton.conectar("mongodb+srv://boomarts47:fede123@cluster0.z3tu5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", "E-Commerce");
 
+    io.on("connection", socket => {
+        console.log(`Se ha conectdo un cliente con ID ${socket.id}`);
+
+        socket.on("id", nombre => {
+            usuarios.push({ id: socket.id, nombre });
+            socket.emit("mensajesPrevios", mensajes);
+            socket.broadcast.emit("nuevoUsuario", nombre);
+        })
+
+        socket.on("mensaje", (nombre, mensaje) => {
+            mensajes.push({ nombre, mensaje });
+            io.emit("nuevoMensaje", nombre, mensaje);
+        })
+
+        socket.on("desconectado", () => {
+            let usuario = usuario.find(user => user.id === socket.id);
+            if (usuario) {
+                io.emit("saleUsuario", usuario.nombre);
+            }
+        })
+
+    })
+
 }
-
-
