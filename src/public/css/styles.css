@@ -189,7 +189,7 @@ h3{
     flex-wrap: wrap;
     border-style: groove;
     margin-bottom: 150px;
-    padding-left: 35px;
+    margin: 20px;
 }
 
 #footer{
@@ -236,6 +236,35 @@ strong{
 
 #logo{
     width: 110px;
+}
+
+.inicio {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%; 
+    height: max-content; 
+    background-color: rgba(57, 87, 144, 0.628);
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+.inicio img{
+    width: 250px;
+    height: 180px;
+}
+.texto-inicio{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.texto-inicio p{
+    font-size: 19px;
+    padding: 15px;
 }
 
 .presentacion{
@@ -324,6 +353,25 @@ strong{
     height: 400px;
     top: -70px;
     left: -70px;
+}
+
+.fin-home{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%; 
+    height: max-content; 
+    background-color: rgba(57, 87, 144, 0.628);
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.fin-home div{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    max-width: 100%;
 }
 
 #mensajes{
