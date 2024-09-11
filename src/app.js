@@ -19,6 +19,7 @@ import session from "express-session";
 import MongoStore from "connect-mongo";
 import { config } from "./config/config.js";
 import { logger, middLogger } from "./utils/winston.js";
+import { ErrorHandler } from "./middlewares/errorHandler.js";
 
 if (cluster.isPrimary) {
     cluster.fork();
@@ -78,8 +79,9 @@ if (cluster.isPrimary) {
     app.use('/api/usuarios', usuariosRouter);
     app.use("/api/carts", carritoRouter);
     app.use("/api/sessions", sessionRouter);
-
     app.use('/', vistasRouter);
+
+    app.use(ErrorHandler)
 
     const serverHTP = app.listen(port, () => {
         logger.info(`Server escuchando en puerto ${port} - pid: ${process.pid} - worker: ${cluster.worker.id}`)

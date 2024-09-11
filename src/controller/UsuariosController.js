@@ -26,7 +26,7 @@ export class UsuariosController {
     static getUsersBy = async (req, res) => {
         let { id } = req.params;
         if (!isValidObjectId(id)) {
-            return CustomError.generarError("Error cartController", "usuario invalido", `Ingrese un ID valido de Mongoose`, Tipos_Error.Codigo_http);
+            CustomError.createError("ID invalido", argumentosProductos(req.params),"ID invalido", Tipos_Error.Argumentos_invalidos);
         }
         let usuario;
         try {
@@ -44,14 +44,7 @@ export class UsuariosController {
         let { name, email, last_name, password } = req.body;
         if (!name || !last_name || !email || !password) {
             res.setHeader(`Content-Type`, `application/json`);
-            return CustomError.generarError("Error cartController", "faltan datos", `Faltan completar datos`, Tipos_Error.Codigo_http);
-        }
-
-        if (!name || !email || !last_name || !password) {
-            const errorMessage = "Faltan completar algunos campos";
-            res.setHeader(`Content-Type`, `application/json`);
-                return res.status(400).json({ error: errorMessage });
-
+            CustomError.createError("Argumentos Faltantes", argumentosProductos(req.body),"complete las propiedades faltantes", Tipos_Error.Argumentos_invalidos);
         }
 
         let existe;
@@ -59,7 +52,7 @@ export class UsuariosController {
         try {
             existe = await usuariosService.getUsersByEmail({ email });
             if (existe) {
-                return res.status(400).json({ error: `Ya existe ${email} en la base de datos` });
+                CustomError.createError("Argumentos ya existentes", argumentosProductos(req.body),"Ya existe el usuario en la base de datos", Tipos_Error.Tipos_de_datos);
             }
         } catch (error) {
             console.log(error);
@@ -82,7 +75,7 @@ export class UsuariosController {
         let updates = req.body;  
 
         if (!isValidObjectId(id)) {
-            return CustomError.generarError("Error cartController", "usuario invalido", `Ingrese un ID valido de Mongoose`, Tipos_Error.Codigo_http);
+            CustomError.createError("ID invalido", argumentosProductos(req.params),"ID invalido", Tipos_Error.Argumentos_invalidos);
         }
 
         let usuarioActualizado;
@@ -90,7 +83,7 @@ export class UsuariosController {
         try {
             usuarioActualizado = await usuariosService.updateUser({ _id: id }, updates);
             if (!usuarioActualizado) {
-                return CustomError.generarError("Error usuarioController", "Usuario no encontrado", `No se encontró el usuario con ID: ${id}`, Tipos_Error.Codigo_http);
+                CustomError.createError("Argumentos Inexistentes", argumentosProductos(req.params),"usuario inexistente", Tipos_Error.Argumentos_invalidos);
             }
         } catch (error) {
             console.log(error);
@@ -107,13 +100,13 @@ export class UsuariosController {
             let { uid } = req.params;
         
             if (!isValidObjectId(uid)) {
-                return CustomError.generarError("Error cartController", "usuario invalido", `Ingrese un ID valido de Mongoose`, Tipos_Error.Codigo_http);
+                CustomError.createError("ID invalido", argumentosProductos(req.params),"ID invalido", Tipos_Error.Argumentos_invalidos);
             }
         
             try {
                 let usuario = await usuariosService.getUsersBy({ _id: uid });
                 if (!usuario) {
-                    return CustomError.generarError("Error cartController", "usuario inexistente", `Usuario no encontrado`, Tipos_Error.Codigo_http);
+                    CustomError.createError("Argumentos Inexistentes", argumentosProductos(req.params),"usuario inexistente", Tipos_Error.Argumentos_invalidos);
                 }
                 usuario.rol = usuario.rol === "premium" ? "user" : "premium";
                 await usuariosService.updateUser(uid, { rol: usuario.rol });
@@ -128,7 +121,7 @@ export class UsuariosController {
     static deleteUsers = async (req, res) => {
         let { id } = req.params;
         if (!isValidObjectId(id)) {
-            return CustomError.generarError("Error cartController", "usuario invalido", `Ingrese un ID valido de Mongoose`, Tipos_Error.Codigo_http);
+            CustomError.createError("ID invalido", argumentosProductos(req.params),"ID invalido", Tipos_Error.Argumentos_invalidos);
         }
 
         let resultado;
@@ -137,11 +130,11 @@ export class UsuariosController {
         } catch (error) {
             console.log('error');
             res.setHeader('Content-Type', 'application/json');
-            return res.status(400).json({ error: error.message });
+            return res.status(500).json({ error: error.message });
         }
         let usuarios = await usuariosService.getUsers();
         res.setHeader(`Content-Type`, `application/json`);
-        return res.status(200).json({ payload: 'usuario eliminado' });
+        return res.status(200).json({ payload: 'usuario eliminado', usuarios });
     }
 
 }

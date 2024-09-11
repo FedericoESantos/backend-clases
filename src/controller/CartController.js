@@ -13,12 +13,12 @@ export class CartController {
             let { cid } = req.params;
 
             if (!isValidObjectId(cid)) {
-                return CustomError.generarError("Error cartController", "carrito invalido", `El ID del carrito ${cid} no es valido`, Tipos_Error.Codigo_http);
+                CustomError.createError("ID invalido", argumentosProductos(req.params),"ID invalido", Tipos_Error.Argumentos_invalidos);
             }
 
             let carrito = await cartsService.getOneBy({ _id: cid });
             if (!carrito) {
-                return CustomError.generarError("Error cartController", "carrito inexistente", `El carrito con ID ${cid} no existe en la base de datos`, Tipos_Error.Codigo_http);
+                CustomError.createError("Argumentos Inexistentes", argumentosProductos(req.params),"carrito inexistente", Tipos_Error.Argumentos_invalidos);
             }
 
             res.setHeader(`Content-Type`, `application/json`);
@@ -34,13 +34,13 @@ export class CartController {
             const datosCart = req.body;
 
             if (!datosCart) {
-                return CustomError.generarError("Error cartController", "Datos inválidos", "Los datos del carrito son inválidos", Tipos_Error.Codigo_http);
+                CustomError.createError("Datos inexistentes", argumentosProductos(req.body),"datos inexistentes", Tipos_Error.Argumentos_invalidos);
             }
 
             const nuevoCarrito = await cartsService.create(datosCart);
 
             if (!nuevoCarrito) {
-                return CustomError.generarError("Error cartController", "No se pudo crear el carrito", "Error al crear el carrito", Tipos_Error.Codigo_http);
+                CustomError.createError("Argumentos inexistente", argumentosProductos(req.body),"No se pudo encontrar carrito en la base de datos", Tipos_Error.Argumentos_invalidos);
             }
 
             res.setHeader('Content-Type', 'application/json');
@@ -53,81 +53,92 @@ export class CartController {
     static buyCart = async (req, res, next) => {
         let { cid } = req.params;
 
-        if (!isValidObjectId(cid)) {
-            return CustomError.generarError("Error cartController", "carrito invalido", `El ID del carrito ${cid} no es valido`, Tipos_Error.Codigo_http);
-        }
-
-        let carrito = await cartsService.getOneBy({ _id: cid });
-
-        if (!carrito) {
-            return CustomError.generarError("Error cartController", "carrito inexistente", `El carrito con ID ${cid} no existe en la base de datos`, Tipos_Error.Codigo_http);
-        }
-
-        if (carrito.productos.length === 0) {
-            return CustomError.generarError("Error cartController", "carrito sin items", `El carrito con ID ${cid} no tiene items`, Tipos_Error.Codigo_http);
-        }
-
-        let conStock = [];
-        let sinStock = [];
-        let total = 0;
-
-        for (let i = 0; i < carrito.productos.length; i++) {
-            let id = carrito.productos[i].producto;
-            let cantidad = carrito.productos[i].cantidad;
-            let producto = await productService.getProductBy({ _id: id });
-            if (!producto || producto.stock < cantidad) {
-                sinStock.push(carrito.productos[i]);
-                if (producto.stock < cantidad) {
-                    console.log(`El producto ${producto.description} no tiene stock suficiente. Stock: ${producto.stock} / cantidad: ${cantidad} `);
-                }
-            } else {
-                conStock.push({
-                    id,
-                    descripcion: producto.description,
-                    precio: producto.price,
-                    stockPrevioCompra: producto.stock,
-                    stockPostCompra: producto.stock - cantidad,
-                    cantidad,
-                    subTotal: cantidad * producto.price
-                })
-                total += producto.price;
-                producto.stock = producto.stock - cantidad;
-
-                await productService.update(id, producto);
+        try {
+            if (!isValidObjectId(cid)) {
+                CustomError.createError("ID invalido", argumentosProductos(req.params),"ID invalido", Tipos_Error.Argumentos_invalidos);
             }
-        }
+    
+            let carrito = await cartsService.getOneBy({ _id: cid });
+    
+            if (!carrito) {
+                CustomError.createError("Datos inexistentes", argumentosProductos(req.body),"datos inexistentes", Tipos_Error.Argumentos_invalidos);
+            }
+    
+            if (carrito.productos.length === 0) {
+                CustomError.createError("Datos invalidos", argumentosProductos(req.body),`El carrito con ID ${id} no tiene stock`, Tipos_Error.Argumentos_invalidos);
+            }
+    
+            let conStock = [];
+            let sinStock = [];
+            let total = 0;
+    
+            for (let i = 0; i < carrito.productos.length; i++) {
+                let id = carrito.productos[i].producto;
+                let cantidad = carrito.productos[i].cantidad;
+                let producto = await productService.getProductBy({ _id: id });
+                if (!producto || producto.stock < cantidad) {
+                    sinStock.push(carrito.productos[i]);
+                    if (producto.stock < cantidad) {
+                        console.log(`El producto ${producto.description} no tiene stock suficiente. Stock: ${producto.stock} / cantidad: ${cantidad} `);
+                    }
+                } else {
+                    conStock.push({
+                        id,
+                        descripcion: producto.description,
+                        precio: producto.price,
+                        stockPrevioCompra: producto.stock,
+                        stockPostCompra: producto.stock - cantidad,
+                        cantidad,
+                        subTotal: cantidad * producto.price
+                    })
+                    total += producto.price;
+                    producto.stock = producto.stock - cantidad;
+    
+                    await productService.update(id, producto);
+                }
+            }
+    
+            if (conStock.length === 0) {
+                CustomError.createError("Datos invalidos", argumentosProductos(req.body),`El carrito con ID ${id} no tiene stock`, Tipos_Error.Argumentos_invalidos);
+            }
+    
+            carrito.productos = sinStock;
+            await cartsService.getUpdate(cid, carrito);
 
-        if (conStock.length === 0) {
-            return CustomError.generarError("Error cartController", "carrito sin items", `No existen items en condiciones de ser comprados en el carrito con id ${cid} ... verifique Stock / codigos de producto`, Tipos_Error.Codigo_http);
+        } catch (error) {
+            res.setHeader('Content-Type','application/json');
+            return res.status(500).json(
+            {
+            error:`Error inesperado en el servidor - Intente más tarde`,
+            detalle:`${error.message}`
+            }
+            )
         }
-
-        carrito.productos = sinStock;
-        await cartsService.getUpdate(cid, carrito);
 
         let nroComprobante = Date.now();
-
-        let fecha = new Date();
-        let comprador = req.session.user?.email;
-
-        let ticket = await ticketModelo.create({
-            nroComprob: nroComprobante, 
-            fecha: fecha,
-            comprador: req.session.user?.email,
-            items: conStock,
-            total
-        });
-       
-        let message = `
-            Hola cliente ...!!!<br>
-        Has registrado una compra con n° ticket ${nroComprobante}, por un importe de $ ${total}. <br>
-        Detalle: ${JSON.stringify(conStock)} <br>
-        ${sinStock.length > 0 ? 'Algunos items no pudieron comprarse... por favor consulte' : ""} <br>
-        Por favor contacte a <a href:"mailto:boomarts47@gmail.com">Pagos</a> para finalizar la operación. <br>
-        Muchas Gracias!!!
-        `;
-
-        let resultado = await enviarMail(comprador, "Tu compra esta a un paso de concretarse...", message)
-
+    
+            let fecha = new Date();
+            let comprador = req.session.user?.email;
+    
+            let ticket = await ticketModelo.create({
+                nroComprob: nroComprobante, 
+                fecha: fecha,
+                comprador: req.session.user?.email,
+                items: conStock,
+                total
+            });
+           
+            let message = `
+                Hola cliente ...!!!<br>
+            Has registrado una compra con n° ticket ${nroComprobante}, por un importe de $ ${total}. <br>
+            Detalle: ${JSON.stringify(conStock)} <br>
+            ${sinStock.length > 0 ? 'Algunos items no pudieron comprarse... por favor consulte' : ""} <br>
+            Por favor contacte a <a href:"mailto:boomarts47@gmail.com">Pagos</a> para finalizar la operación. <br>
+            Muchas Gracias!!!
+            `;
+    
+            let resultado = await enviarMail(comprador, "Tu compra esta a un paso de concretarse...", message)
+        
         res.setHeader(`Content-Type`, `application/json`);
         return res.status(200).json({ ticket, resultado });
     }
@@ -140,22 +151,22 @@ export class CartController {
             if (web) {
                 return res.redirect("carrito/:cid/product/:pid?error=Ingrese Cid / Pid validos")
             } else {
-                return CustomError.generarError("Error cartController", "carrito invalido", `El ID del carrito ${cid} no es valido`, Tipos_Error.Codigo_http);
+                CustomError.createError("ID invalido", argumentosProductos(req.params),"ID invalido", Tipos_Error.Argumentos_invalidos);
             }
         }
 
         let carrito = await cartsService.getOneByPopulate({ _id: cid });
         if (!carrito) {
-            return CustomError.generarError("Error cartController", "carrito inexistente", `El carrito con ID ${cid} no existe en la base de datos`, Tipos_Error.Codigo_http);
+            CustomError.createError("Datos inexistentes", argumentosProductos(req.params),"No existe carrito en la base de datos", Tipos_Error.Argumentos_invalidos);
         }
 
         let producto = await productService.getProductBy({ _id: pid });
         if (!producto) {
-            return CustomError.generarError("Error productController", "producto inexistente", `El producto con ID ${cid} no existe en la base de datos`, Tipos_Error.Codigo_http);
+            CustomError.createError("Datos inexistentes", argumentosProductos(req.params),"No existe productos en la base de datos", Tipos_Error.Argumentos_invalidos);
         }
 
         if (producto.stock === 0) {
-            return CustomError.generarError("Error cartController", "carrito sin items", `No hay stock de ${producto.description}. Stock Actual: ${producto.stock}`, Tipos_Error.Codigo_http);
+            CustomError.createError("Datos invalidos", argumentosProductos(req.body),`El carrito con ID ${id} no tiene stock`, Tipos_Error.Argumentos_invalidos);
         }
 
         let indiceProd = carrito.productos.findIndex(prod => prod.producto == pid);
@@ -171,7 +182,7 @@ export class CartController {
             res.setHeader(`Content-Type`, `application/json`);
             return res.status(200).json({ payload: "carrito actualizado" });
         } else {
-            return CustomError.generarError("Error cartController", "carrito sin actualizar", "El Carrito no se pudo actualizar", Tipos_Error.Codigo_http);
+            CustomError.createError("Datos invalidos", argumentosProductos(req.body),`El carrito con ID ${id} no esta actualizado`, Tipos_Error.Argumentos_invalidos);
         }
     }
 

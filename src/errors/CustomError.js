@@ -1,9 +1,12 @@
+import { Tipos_Error } from "./Errors.js";
+
 export class CustomError{
-    static generarError(name, message, cause, code){
-        let error = new Error(message, {cause: cause});
+    static createError(name = "Error", cause, message, code=Tipos_Error.Internal_Server_Error){
+        const error = new Error(message, {cause:cause});
         error.name = name;
         error.code = code;
 
-        throw error
+        throw error;
     }
+
 }

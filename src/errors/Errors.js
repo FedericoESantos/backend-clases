@@ -1,5 +1,6 @@
 export const Tipos_Error = {
-    Codigo_http: 400,
+    Tipos_de_datos: 400,
+    Argumentos_invalidos: 400,
     Autenticacion: 401,
     Autorizacion: 403,
     Not_Found: 404,
